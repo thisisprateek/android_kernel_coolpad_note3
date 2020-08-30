@@ -19,7 +19,7 @@
 #include <linux/wait.h>
 #include <linux/sched.h>
 #include <linux/vmalloc.h>
-#include <disp_assert_layer.h>
+#include <mt-plat/disp_assert_layer.h>
 #include <linux/slab.h>
 #include <linux/spinlock.h>
 #include <linux/semaphore.h>

@@ -492,13 +492,13 @@ struct task_struct *find_trylock_task_mm(struct task_struct *t)
 /*
  * it's copied from lowmemorykiller.c
 */
-static short lowmem_oom_score_adj_to_oom_adj(short oom_score_adj)
+/* static short lowmem_oom_score_adj_to_oom_adj(short oom_score_adj)
 {
 	if (oom_score_adj == OOM_SCORE_ADJ_MAX)
 		return OOM_ADJUST_MAX;
 	else
-		return ((oom_score_adj * -OOM_DISABLE * 10) / OOM_SCORE_ADJ_MAX + 5) / 10;	/* round */
-}
+		return ((oom_score_adj * -OOM_DISABLE * 10) / OOM_SCORE_ADJ_MAX + 5) / 10;
+} */
 
 static void mlog_procinfo(void)
 {
@@ -526,11 +526,11 @@ static void mlog_procinfo(void)
 		if (!p->signal)
 			goto unlock_continue;
 
-#ifdef CONFIG_ANDROID_LOW_MEMORY_KILLER_AUTODETECT_OOM_ADJ_VALUES
-		oom_score_adj = lowmem_oom_score_adj_to_oom_adj(p->signal->oom_score_adj);
-#else
-		oom_score_adj = p->signal->oom_adj;
-#endif
+//#ifdef CONFIG_ANDROID_LOW_MEMORY_KILLER_AUTODETECT_OOM_ADJ_VALUES
+		//oom_score_adj = lowmem_oom_score_adj_to_oom_adj(p->signal->oom_score_adj);
+//#else
+		oom_score_adj = p->signal->oom_score_adj;
+//#endif
 
 		if (max_adj < oom_score_adj || oom_score_adj < min_adj)
 			goto unlock_continue;

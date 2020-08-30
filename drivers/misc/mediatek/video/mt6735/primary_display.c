@@ -82,6 +82,7 @@
 #include "mt_smi.h"
 #include <mach/mt_freqhopping.h>
 #include "ddp_gamma.h"
+#include "ddp_dpi.h"
 
 typedef void (*fence_release_callback) (unsigned int data);
 unsigned int is_hwc_enabled = 0;
