@@ -393,6 +393,10 @@ USERINCLUDE    := \
 LINUXINCLUDE    := \
 		-I$(srctree)/arch/$(hdr-arch)/include \
 		-Iarch/$(hdr-arch)/include/generated \
+		-I$(srctree)/drivers/misc/mediatek/base/power/mt6735 \
+		-I$(srctree)/drivers/misc/mediatek/btcvsd \
+		-I$(srctree)/drivers/misc/mediatek/cmdq/v2/mt6735 \
+		-I$(srctree)/drivers/mmc/host/mediatek/mt6735 \
 		$(if $(KBUILD_SRC), -I$(srctree)/include) \
 		-Iinclude \
 		$(USERINCLUDE)
